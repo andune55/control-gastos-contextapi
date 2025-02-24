@@ -1,8 +1,10 @@
-import { useState, ChangeEvent, useMemo } from "react"
+import { useState, ChangeEvent, useMemo, FormEvent } from "react"
+import { useBudget } from "../hooks/useBudget"
 
 export default function BudgetForm() {
 
     const [budget, setBudget] = useState(0)
+    const { dispatch } = useBudget() //estas llaves son importantes porque useReducer nos retornaba state y dispatch pero en un arreglo, pero en este caso es un custom hook, tiene que ser con llaves
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) =>{
         //setBudget(+e.target.value)
@@ -13,8 +15,14 @@ export default function BudgetForm() {
         return isNaN(budget) || budget <= 0
     }, [budget])
 
+    const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        //console.log('Añadir o definir presupuesto')
+        dispatch({type: 'add-budget', payload: {budget}})
+    }   
+
     return (
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleSubmit}>
             <div className="flex flex-col space-y-5">
                 <label htmlFor="budget" className="text-4xl text-blue-600 font-bold text-center">
                     Definir Presupuesto

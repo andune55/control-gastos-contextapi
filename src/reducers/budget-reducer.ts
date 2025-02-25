@@ -49,6 +49,7 @@ export const budgetReducer = (
             modal: false
         }
     }
+    
     if(action.type === "add-expense"){
         const expense = createExpense(action.payload.expense)
         return{

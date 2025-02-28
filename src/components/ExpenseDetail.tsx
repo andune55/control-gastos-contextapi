@@ -1,4 +1,4 @@
-import { useMemo, Dispatch } from 'react';
+import { useMemo } from 'react';
 import { LeadingActions, SwipeableList, SwipeableListItem, SwipeAction, TrailingActions} from 'react-swipeable-list'
 import { categories } from '../data/categories';
 import { formatDate } from '../helpers';

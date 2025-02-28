@@ -13,7 +13,7 @@ export default function BudgetTracker() {
 
     return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div className="flex justify-center">
+        <div className="flex justify-center max-sm:max-w-[300px] mx-auto">
             <CircularProgressbar 
                 value={percentage}
                 styles={buildStyles({
@@ -26,7 +26,7 @@ export default function BudgetTracker() {
             />
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-8">
+        <div className="flex flex-col justify-center items-center gap-5">
             <button
                 type="button"
                 className='bg-pink-600 w-full p-2 text-white uppercase font-bold rounded-lg cursor-pointer'

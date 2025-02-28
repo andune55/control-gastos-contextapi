@@ -17,23 +17,31 @@ function App() {
 
   return (
     <>
-     <header className="bg-blue-600 py-8 max-h-72">
-      <h1 className="uppercase text-center font-black text-4xl text-white">
+      <header className="bg-blue-600 py-4 max-h-72">
+      <h1 className="uppercase text-center font-black text-xl text-white">
         Planificador de gastos
       </h1>
-     </header>
+      </header>
 
-      <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg mt-10 p-10">      
-        {isValidObject? <BudgetTracker /> : <BudgetForm />}    
+      <div className="flex max-md:flex-col justify-around">
+        <div>
+          <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg mt-5 p-5">      
+            {isValidObject? <BudgetTracker /> : <BudgetForm />}    
+          </div>
+          <FilterByCategory />
+        </div>
+
+        {isValidObject && (
+          <main className='py-5'>
+            
+            <ExpenseList/>
+            <ExpenseModal/>
+          </main>
+        )}
+
       </div>
 
-      {isValidObject && (
-        <main className='max-w-3xl mx-auto py-10'>
-          <FilterByCategory />
-          <ExpenseList/>
-          <ExpenseModal/>
-        </main>
-      )}
+      
      
     </>
   )

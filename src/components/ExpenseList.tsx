@@ -10,10 +10,10 @@ export default function ExpenseList() {
     const isEmpty = useMemo(() => filteredExpenses.length === 0, [filteredExpenses])
     
     return (
-        <div className="mt-10 bg-white shadow-lg rounded-lg p-5">
+        <div className="bg-white shadow-lg rounded-lg p-5">
             {isEmpty ? <p className="text-gray-600 text-2xl font-bold">No hay gastos</p> : (
                 <>
-                    <p className="text-gray-600 text-2xl font-bold mb-5">Listado de gastos.</p>
+                    <p className="text-gray-600 text-xl font-bold mb-2">Listado de gastos</p>
                     {/* {state.expenses.map( expense => ( */}
                     {filteredExpenses.map( expense => (
                         <ExpenseDetail

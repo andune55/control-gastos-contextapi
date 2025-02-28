@@ -43,16 +43,16 @@ export default function ExpenseDetail({expense} : ExpenseDetailsProps) {
             trailingActions = {trailingActions()}
         >
 
-            <div className="bg-white shadow-lg p-5 w-full border-b border-gray-200 flex gap-4 items-center">
+            <div className="bg-white shadow-lg p-3 w-full border-b border-gray-200 flex gap-2 items-center">
                 <div>
                     <img 
                         src={`./icono_${categoryInfo.icon}.svg`} 
                         alt="icono gasto"
-                        className='w-20'
+                        className='w-10'
                     />
                 </div>
 
-                <div className='flex-1 space-y-2'>
+                <div className='flex-1 space-y-1'>
                     <p className="text-sm font-bold uppercase text-slate-500">{categoryInfo.name}</p>
                     <p>{expense.expenseName}</p>
                     <p className="text-slate-600 text-sm">{ formatDate( expense.date!.toString() ) }</p>

@@ -12,8 +12,8 @@ export default function BudgetTracker() {
     const resetApp = () =>{dispatch({type: 'restart-app'}) }
 
     return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div className="flex justify-center max-sm:max-w-[300px] mx-auto">
+    <div className="flex max-sm:flex-col gap-5">
+        <div className="flex justify-center max-h-[200px] max-sm:max-h-[150px]">
             <CircularProgressbar 
                 value={percentage}
                 styles={buildStyles({
@@ -22,18 +22,18 @@ export default function BudgetTracker() {
                     textSize: 8,
                     textColor: percentage >= 80? '#dc2626' : '#3b82f6'
                 })}
-                text={`${percentage}% gastado`}                
+                text={`${percentage}% gastado`}       
             />
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-5">
-            <button
+        <div className="flex flex-col justify-items-start items-center gap-2">
+            {/* <button
                 type="button"
                 className='bg-pink-600 w-full p-2 text-white uppercase font-bold rounded-lg cursor-pointer'
                 onClick={resetApp}
             >
                 Resetear App
-            </button>
+            </button> */}
 
             <AmountDisplay
                 label="Presupuesto"

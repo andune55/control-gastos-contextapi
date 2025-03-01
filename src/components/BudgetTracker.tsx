@@ -9,7 +9,7 @@ export default function BudgetTracker() {
     const percentage = +((totalExpenses / state.budget) * 100).toFixed(2)
     //console.log(percentage)
 
-    const resetApp = () =>{dispatch({type: 'restart-app'}) }
+    // const resetApp = () =>{dispatch({type: 'restart-app'}) }
 
     return (
     <div className="flex max-sm:flex-col gap-5">

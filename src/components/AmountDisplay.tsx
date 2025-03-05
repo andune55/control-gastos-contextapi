@@ -3,7 +3,6 @@ type AmountDisplayProps = {
     label?: string
     amount: number
 }
-
 export default function AmountDisplay({label, amount} : AmountDisplayProps) {
   return (
     <p className="text-xl text-blue-600">
